@@ -7,3 +7,8 @@
 echo Hello
 echo Hello World
 
+## Example from project
+echo Installing Nginx
+echo starting Nginx Service
+
+

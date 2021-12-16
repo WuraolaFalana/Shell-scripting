@@ -32,7 +32,12 @@ echo Good Morning, Welcome, Today date is ${DATE}
    #ii. Arithmetic substitution - VAR=$((expression)).
 
 DATE=$(date +%F)
-echo Good Morning, Welcome, Today date is ${DATE}
+echo Good Morning, Welcome, Today
+ date is ${DATE}
 
 ADD=$((2+3))
 echo ADD = ${ADD}
+
+## Variable from Shell command line
+echo USER = ${USER}
+echo A = ${A}

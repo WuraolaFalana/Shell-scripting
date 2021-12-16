@@ -19,3 +19,7 @@ echo a in currency = $$a
 echo a in currency = $${a}
 echo a in currency = $aUSD
 echo a in currency = ${a}USD
+
+#Use cases
+#1. If we want to use a value in multiple places then we go with variables. This brings an advantage of
+# changing the value in one place and it impacts in all the places.

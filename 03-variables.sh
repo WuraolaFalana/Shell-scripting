@@ -17,3 +17,5 @@ c=true      #Boolean
 echo a = $a
 echo a in currency = $$a
 echo a in currency = $${a}
+echo a in currency = $aUSD
+echo a in currency = ${a}USD

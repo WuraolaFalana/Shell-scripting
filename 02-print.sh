@@ -37,3 +37,6 @@ echo -e "\e[34mHello In Blue Color\e[0m"
 echo -e "\e[35mHello In Magneta Color\e[0m"
 echo -e "\e[36mHello In Cyan Color\e[0m"
 
+echo -e "\e[31mNormal Red\e[1;31mBold Red\e[0m"
+echo -e "\e[1;31mBold Red\e[0m"
+

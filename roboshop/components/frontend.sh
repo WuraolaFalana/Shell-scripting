@@ -19,4 +19,4 @@
 
 # systemctl restart nginx
 
-echo Cart Setup
+echo Frontend Setup

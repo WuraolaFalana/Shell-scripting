@@ -56,6 +56,8 @@ Syntax:
 read -p 'Enter your age: ' age
 if [ "${age}" -lt 18 ]; then
   echo You are a Minor
+elif [ "${age}" -gt 60 ]; then
+  echo You are a Senior Citizen
 else
   echo You are a Major
 fi

@@ -19,5 +19,5 @@
 
 # systemctl restart nginx
 
-
+#Check whether the script is running as root user or not
 yum install nginx -y

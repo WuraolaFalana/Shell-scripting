@@ -54,17 +54,25 @@ Syntax:
         #(there are so many and documentation can be referred to when needed)
 
 read -p 'Enter your age: ' age
-if [ -z "$age" ]; then
-  echo Input Missing
-  exit
-fi
+#if [ -z "$age" ]; then
+  #echo Input Missing
+  #exit
+#fi
 
-if [ "${age}" -lt 18 ]; then
+if [ ! -z "${age}" -a "${age}" -lt 18 ]; then
   echo You are a Minor
-elif [ "${age}" -gt 60 ]; then
+elif [ ! -z "${age}" -a "${age}" -gt 60 ]; then
   echo You are a Senior Citizen
 else
   echo You are a Major
 fi
 
 ## Note:When you use variables in expressions of if statment, always double quote them, not single quote
+
+## Expressions can be combined
+# [ Expression1 Expression2]
+#LOGICAL AND -a
+# [ Expression1 -a Expression2] -> True if both are true
+
+#LOGICAL OR -o
+# [ Expression1 -o Expression2] -> True if any expression is true

@@ -39,7 +39,7 @@ set -e
 echo Frontend Setup
 STATUS_CHECK() {
   if [ $1 -ne 0 ]; then               #$? means status check and $1 means first argument
-    echo "$2"
+    echo -e "\e[1;31m${2}\e[0m"
     exit 1
   fi
 }

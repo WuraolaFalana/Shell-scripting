@@ -34,9 +34,11 @@ set -e
   #echo "Download Frontend Failed"
   #exit 1
 
-
-## Check whether the script is running as root user or not
 echo Frontend Setup
+## Check whether the script is running as root user or not
+LOG_FILE=/tmp/roboshop.log
+rm -f ${LOG_FILE}
+
 STATUS_CHECK() {
   if [ $1 -ne 0 ]; then               #$? means status check and $1 means first argument
     echo -e "\e[1;31m${2} - FAILED\e[0m"
@@ -47,7 +49,7 @@ STATUS_CHECK() {
 }
 
 yum install nginx -y
-STATUS_CHECK $? "Nginx Installation"
+STATUS_CHECK $? "Nginx Installation" >>${LOG_FILE}
 
 curl -f -s -L -o /tmp/frontend.zip "https://github.com/roboshop-devops-project/frontend/archive/main.zip"
 STATUS_CHECK $? "Download frontend"

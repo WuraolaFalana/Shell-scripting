@@ -48,10 +48,10 @@ STATUS_CHECK() {
   fi
 }
 
-yum install nginx -y
-STATUS_CHECK $? "Nginx Installation" &>>${LOG_FILE}
+yum install nginx -y &>>${LOG_FILE}
+STATUS_CHECK $? "Nginx Installation"
 
-curl -f -s -L -o /tmp/frontend.zip "https://github.com/roboshop-devops-project/frontend/archive/main.zip"
+curl -f -s -L -o /tmp/frontend.zip "https://github.com/roboshop-devops-project/frontend/archive/main.zip" &>>${LOG_FILE}
 STATUS_CHECK $? "Download frontend"
 
 cd /usr/share/nginx/html

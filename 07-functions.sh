@@ -40,8 +40,9 @@ sample2() {
 ## Main Program
 a=100
 sample2 123 xyz
-echo Value of b from main program = ${b}
 b=250
+echo Value of b from main program = ${b}
+
 
 ## i. Variables with functions
 # 1. You declare a variable in main program and you can access it in function and vice versa.

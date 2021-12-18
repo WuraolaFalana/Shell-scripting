@@ -32,6 +32,12 @@ sample1
 sample2() {
   echo First Argument = $1
   echo Number of Arguments = $#
+  echo a in function = ${a}
+  b=200
 }
-
+a=100
 sample2 123 xyz
+echo Value of b = ${b}
+
+## i. Variables with functions
+# 1. You declare a variable in main program and you can access it in function and vice versa.

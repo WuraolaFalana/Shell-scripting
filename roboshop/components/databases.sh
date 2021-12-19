@@ -41,7 +41,7 @@ STATUS_CHECK $? "Install MongDB"
 systemctl enable mongod &>>${LOG_FILE} &&  systemctl start mongod &>>${LOG_FILE}
 STATUS_CHECK $? "Start MongDB Service"
 
-sed -i 's/127.0.0.1/0.0.0.0' /etc/mongod.conf &>>${LOG_FILE}
+sed -i 's/127.0.0.1/0.0.0.0/' /etc/mongod.conf &>>${LOG_FILE}
 STATUS_CHECK $? "Update MongoDB Service"
 
 systemctl enable mongod &>>${LOG_FILE} &&  systemctl restart mongod &>>${LOG_FILE}

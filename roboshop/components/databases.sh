@@ -7,6 +7,7 @@
   #exit
   #fi
   source components/common.sh
+  MAX_LENGTH=$(cat ${0} | grep STATUS_CHECK | awk -F '"' '{print $2}' | awk '{ print length }' | sort | tail -1)
 
   #Setup MongoDB repos.
   # curl -s -o /etc/yum.repos.d/mongodb.repo https://raw.githubusercontent.com/roboshop-devops-project/mongodb/main/mongo.repo
@@ -134,6 +135,8 @@ STATUS_CHECK $? "Configure App User Permissions"
 #list_users
 #rabbitmqctl list_users | grep roboshop - This helps to find if there is a username called roboshop
 #echo $ - This will give 0 if it found such user
+
+#Revert to lecture for loop from 1:10
 
 
 

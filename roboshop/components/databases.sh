@@ -7,7 +7,6 @@
   #exit
   #fi
   source components/common.sh
-  MAX_LENGTH=$(cat ${0} | grep STATUS_CHECK | awk -F '"' '{print $2}' | awk '{ print length }' | sort | tail -1)
 
   #Setup MongoDB repos.
   # curl -s -o /etc/yum.repos.d/mongodb.repo https://raw.githubusercontent.com/roboshop-devops-project/mongodb/main/mongo.repo

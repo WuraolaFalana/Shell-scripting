@@ -35,6 +35,7 @@
 
 
 ### MongoDB Set
+echo -e "       ------->>>>>>>> \e[1;35mMongDB Setup\e[0m  <<<<<<<<---------"
 curl -s -o /etc/yum.repos.d/mongodb.repo https://raw.githubusercontent.com/roboshop-devops-project/mongodb/main/mongo.repo &>>${LOG_FILE}
 STATUS_CHECK $? "Download MongDB repo"
 
@@ -71,6 +72,7 @@ STATUS_CHECK $? "Load Schema"
 
 
 ### Redis SetUp
+echo -e "       ------->>>>>>>> \e[1;35mRedisDB Setup\e[0m  <<<<<<<<---------"
 curl -L https://raw.githubusercontent.com/roboshop-devops-project/redis/main/redis.repo -o /etc/yum.repos.d/redis.repo &>>${LOG_FILE}
 STATUS_CHECK $? "Download Redis repo"
 

@@ -6,8 +6,6 @@
   #echo -e "\e[1;31mYou should be a root user to perform this script\e[0m"
   #exit
   #fi
-
-  echo mongodb
   source components/common.sh
 
   #Setup MongoDB repos.
@@ -33,7 +31,7 @@
   # mongo < catalogue.js
   # mongo < users.js
 
-
+### MongoDB Set
 curl -s -o /etc/yum.repos.d/mongodb.repo https://raw.githubusercontent.com/roboshop-devops-project/mongodb/main/mongo.repo &>>${LOG_FILE}
 STATUS_CHECK $? "Download MongDB repo"
 
@@ -51,8 +49,7 @@ STATUS_CHECK $? "Start MongDB Service"
 
 Download mongodb
 
-#cd /tmp
-#unzip mongodb.zip
-#cd mongodb-main
-#mongo < catalogue.js
-#mongo < users.js
+cd /tmp/mongodb-main
+mongo < catalogue.js &>>${LOG_FILE} && mongo < users.js &>>${LOG_FILE}
+STATUS_CHECK $? "Load Schema"
+

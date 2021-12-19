@@ -116,6 +116,7 @@ yum install https://github.com/rabbitmq/erlang-rpm/releases/download/v23.2.6/erl
 STATUS_CHECK $? "Install Erlang & RabbitMQ"
 
 systemctl enable rabbitmq-server &>>${LOG_FILE} &&  systemctl start rabbitmq-server &>>${LOG_FILE}
+STATUS_CHECK $? "Start RabbitMQ Service"
 
 
 rabbitmqctl add_user roboshop roboshop123 &>>${LOG_FILE}
@@ -123,4 +124,6 @@ STATUS_CHECK $? "Create App User in RabbitMQ"
 
 # rabbitmqctl set_user_tags roboshop administrator &>>${LOG_FILE}
 # rabbitmqctl set_permissions -p / roboshop ".*" ".*" ".*" &>>${LOG_FILE}
+
+
 

@@ -47,7 +47,7 @@ STATUS_CHECK $? "Update MongoDB Service"
 systemctl enable mongod &>>${LOG_FILE} &&  systemctl restart mongod &>>${LOG_FILE}
 STATUS_CHECK $? "Start MongDB Service"
 
-Download mongodb
+DOWNLOAD mongodb
 
 cd /tmp/mongodb-main
 mongo < catalogue.js &>>${LOG_FILE} && mongo < users.js &>>${LOG_FILE}

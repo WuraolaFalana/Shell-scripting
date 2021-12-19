@@ -11,3 +11,8 @@ STATUS_CHECK() {
 }
 
 set-hostname -skip-apply ${COMPONENT}
+
+DOWNLOAD() {
+  curl -s -L -o /tmp/${1}.zip "https://github.com/roboshop-devops-project/${1}/archive/main.zip"
+  STATUS_CHECK $? "Download ${1} Code"
+}

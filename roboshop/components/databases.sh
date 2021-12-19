@@ -43,11 +43,13 @@ STATUS_CHECK $? "Install MongDB"
 systemctl enable mongod &>>${LOG_FILE} &&  systemctl start mongod &>>${LOG_FILE}
 STATUS_CHECK $? "Start MongDB Service"
 
-#Config file: /etc/mongod.conf
+sed -i 's/127.0.0.1/0.0.0.0' /etc/mongod.conf &>>${LOG_FILE}
+STATUS_CHECK $? "Update MongDB Service"
 
-#systemctl restart mongod
+systemctl enable mongod &>>${LOG_FILE} &&  systemctl start mongod &>>${LOG_FILE}
+STATUS_CHECK $? "Start MongDB Service"
 
-#curl -s -L -o /tmp/mongodb.zip "https://github.com/roboshop-devops-project/mongodb/archive/main.zip"
+Download mongodb
 
 #cd /tmp
 #unzip mongodb.zip

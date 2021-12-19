@@ -50,7 +50,7 @@ STATUS_CHECK $? "Download frontend"
 rm -rf /usr/share/nginx/html/*
 STATUS_CHECK $? "Remove old HTML Pages"
 
-cd /tmp && unzip /tmp/frontend.zip &>>${LOG_FILE}
+cd /tmp && unzip -o /tmp/frontend.zip &>>${LOG_FILE}    # -o iis to overwrite the content
 STATUS_CHECK $? "Extracting Frontend Content"
 
 cd /tmp/frontend-main/static/ && cp -r * /usr/share/nginx/html/

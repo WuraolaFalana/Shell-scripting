@@ -124,6 +124,9 @@ if [ $? -ne 0 ]; then
   STATUS_CHECK $? "Create App User in RabbitMQ"
 fi
 
+rabbitmqctl set_user_tags roboshop administrator &>>${LOG_FILE} && rabbitmqctl set_permissions -p / roboshop ".*" ".*" ".*" &>>${LOG_FILE}
+STATUS_CHECK $? "Configure App User Permissions"
+
 #rabbitmqctl add_user roboshop roboshop123 &>>${LOG_FILE}
 #STATUS_CHECK $? "Create App User in RabbitMQ"   #This script failed and to check why it failed we used cat /tmp/roboshop.log
 #sudo su -
@@ -132,8 +135,7 @@ fi
 #rabbitmqctl list_users | grep roboshop - This helps to find if there is a username called roboshop
 #echo $ - This will give 0 if it found such user
 
-# rabbitmqctl set_user_tags roboshop administrator &>>${LOG_FILE}
-# rabbitmqctl set_permissions -p / roboshop ".*" ".*" ".*" &>>${LOG_FILE}
+
 
 
 

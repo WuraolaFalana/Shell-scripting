@@ -58,7 +58,7 @@ STATUS_CHECK $? "Copying Frontend Content"
 cp /tmp/frontend-main/localhost.conf /etc/nginx/default.d/roboshop.conf
 STATUS_CHECK $? "Update Nginx Config File"
 
-systemctl enable nginx &>>${LOG_FILE} && systemctl start nginx &>>${LOG_FILE}
+systemctl enable nginx &>>${LOG_FILE} && systemctl restart nginx &>>${LOG_FILE}
 STATUS_CHECK $? "Restart Nginx"
 
 #To check that the above script is perfectly working fine, use cat /etc/nginx/default.d/roboshop.conf in PUTTY
